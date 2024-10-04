@@ -11,7 +11,7 @@ import SwiftUI
 struct m3u8playerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

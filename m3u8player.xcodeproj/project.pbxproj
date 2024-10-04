@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */; };
-		CE8686462CAF20CB00C141CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686452CAF20CB00C141CB /* ContentView.swift */; };
+		CE8686462CAF20CB00C141CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686452CAF20CB00C141CB /* MainView.swift */; };
 		CE8686482CAF20CC00C141CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8686472CAF20CC00C141CB /* Assets.xcassets */; };
 		CE86864C2CAF20CC00C141CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE86864B2CAF20CC00C141CB /* Preview Assets.xcassets */; };
 		CE8686562CAF20CD00C141CB /* m3u8playerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686552CAF20CD00C141CB /* m3u8playerTests.swift */; };
 		CE8686602CAF20CD00C141CB /* m3u8playerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86865F2CAF20CD00C141CB /* m3u8playerUITests.swift */; };
 		CE8686622CAF20CD00C141CB /* m3u8playerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686612CAF20CD00C141CB /* m3u8playerUITestsLaunchTests.swift */; };
+		CE8686702CAF20E600C141CB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CE86866F2CAF20E600C141CB /* ComposableArchitecture */; };
+		CE8686742CAF276400C141CB /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686732CAF276400C141CB /* VideoData.swift */; };
+		CE8686762CAF27F900C141CB /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686752CAF27F900C141CB /* DummyData.swift */; };
+		CE8686792CAF29AA00C141CB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686782CAF29AA00C141CB /* Card.swift */; };
+		CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86867B2CAF2E7600C141CB /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		CE8686402CAF20CB00C141CB /* m3u8player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m3u8player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerApp.swift; sourceTree = "<group>"; };
-		CE8686452CAF20CB00C141CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE8686452CAF20CB00C141CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE8686472CAF20CC00C141CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8686492CAF20CC00C141CB /* m3u8player.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = m3u8player.entitlements; sourceTree = "<group>"; };
 		CE86864B2CAF20CC00C141CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +50,10 @@
 		CE86865B2CAF20CD00C141CB /* m3u8playerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = m3u8playerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE86865F2CAF20CD00C141CB /* m3u8playerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerUITests.swift; sourceTree = "<group>"; };
 		CE8686612CAF20CD00C141CB /* m3u8playerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE8686732CAF276400C141CB /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
+		CE8686752CAF27F900C141CB /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		CE8686782CAF29AA00C141CB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CE86867B2CAF2E7600C141CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8686702CAF20E600C141CB /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +105,11 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CE86867A2CAF2E4F00C141CB /* PlayerView */,
+				CE8686772CAF299100C141CB /* Component */,
+				CE8686722CAF272C00C141CB /* Model */,
+				CE8686712CAF213700C141CB /* MainView */,
 				CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */,
-				CE8686452CAF20CB00C141CB /* ContentView.swift */,
 				CE8686472CAF20CC00C141CB /* Assets.xcassets */,
 				CE8686492CAF20CC00C141CB /* m3u8player.entitlements */,
 				CE86864A2CAF20CC00C141CB /* Preview Content */,
@@ -129,6 +142,39 @@
 			path = m3u8playerUITests;
 			sourceTree = "<group>";
 		};
+		CE8686712CAF213700C141CB /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8686452CAF20CB00C141CB /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		CE8686722CAF272C00C141CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE8686732CAF276400C141CB /* VideoData.swift */,
+				CE8686752CAF27F900C141CB /* DummyData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE8686772CAF299100C141CB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CE8686782CAF29AA00C141CB /* Card.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		CE86867A2CAF2E4F00C141CB /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				CE86867B2CAF2E7600C141CB /* PlayerView.swift */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +191,9 @@
 			dependencies = (
 			);
 			name = m3u8player;
+			packageProductDependencies = (
+				CE86866F2CAF20E600C141CB /* ComposableArchitecture */,
+			);
 			productName = m3u8player;
 			productReference = CE8686402CAF20CB00C141CB /* m3u8player.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +266,9 @@
 				Base,
 			);
 			mainGroup = CE8686372CAF20CB00C141CB;
+			packageReferences = (
+				CE86866E2CAF20E600C141CB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = CE8686412CAF20CB00C141CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8686462CAF20CB00C141CB /* ContentView.swift in Sources */,
+				CE8686762CAF27F900C141CB /* DummyData.swift in Sources */,
+				CE8686462CAF20CB00C141CB /* MainView.swift in Sources */,
+				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
+				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
+				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +665,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE86866E2CAF20E600C141CB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE86866F2CAF20E600C141CB /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE86866E2CAF20E600C141CB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE8686382CAF20CB00C141CB /* Project object */;
 }
