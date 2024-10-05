@@ -9,11 +9,17 @@ import Foundation
 import SwiftUI
 import ComposableArchitecture
 
+enum AddViewAlertCase {
+    case valid
+    case invalid
+}
+
 struct AddView: View {
     @State private var title: String = ""
     @State private var url: String = ""
     @State private var isAddAlertShown = false
     @State private var isDiscardAlertShown = false
+    @State private var addViewAlert = AddViewAlertCase.valid
     
     let addStore: StoreOf<VideoDataFeature>
     
@@ -40,16 +46,25 @@ struct AddView: View {
                 .padding(32)
             HStack {
                 Button {
-                    print("add")
+                    print("[URL] \(url)")
                     isAddAlertShown = true
-                    addStore.send(.addButtonTapped(data: VideoData(title: title, url: URL(string: url)!)))
+                    guard let validURL = URL(string: url) else {
+                        addViewAlert = .invalid
+                        return
+                    }
+                    if title.isEmpty {
+                        title = "No Title"
+                    }
+                    addStore.send(.addButtonTapped(data: VideoData(title: title, url: validURL)))
                     title = ""
                     url = ""
                 }label: {
                     Text("Add")
                 }.padding(16)
                     .alert(isPresented: $isAddAlertShown) {
-                        Alert(title: Text("Added"), message: Text("Succeeded to add the item 👍🏼"))
+                        Alert(
+                            title: Text("Added"),
+                            message: Text( addViewAlert == .valid ? "Succeeded to add the item 👍🏼" : "Invalid URL"))
                     }
             }
         }

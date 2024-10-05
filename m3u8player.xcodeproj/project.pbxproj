@@ -22,7 +22,7 @@
 		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
 		CEA067D52CB1B66E00E8525F /* EditFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D42CB1B66E00E8525F /* EditFeature.swift */; };
 		CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D72CB1BB8D00E8525F /* AddView.swift */; };
-		CEA067DA2CB1BBF200E8525F /* AddFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* AddFeature.swift */; };
+		CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEA067D42CB1B66E00E8525F /* EditFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeature.swift; sourceTree = "<group>"; };
 		CEA067D72CB1BB8D00E8525F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
-		CEA067D92CB1BBF200E8525F /* AddFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeature.swift; sourceTree = "<group>"; };
+		CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +113,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CEA067DB2CB1D74900E8525F /* Features */,
 				CEA067D62CB1BB7600E8525F /* AddView */,
 				CEA067CF2CB168DC00E8525F /* EditView */,
 				CE86867A2CAF2E4F00C141CB /* PlayerView */,
@@ -156,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				CE8686452CAF20CB00C141CB /* MainView.swift */,
-				CEA067D92CB1BBF200E8525F /* AddFeature.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -201,6 +201,22 @@
 				CEA067D72CB1BB8D00E8525F /* AddView.swift */,
 			);
 			path = AddView;
+			sourceTree = "<group>";
+		};
+		CEA067DB2CB1D74900E8525F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CEA067DC2CB1D75C00E8525F /* VideoDataFeature */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CEA067DC2CB1D75C00E8525F /* VideoDataFeature */ = {
+			isa = PBXGroup;
+			children = (
+				CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */,
+			);
+			path = VideoDataFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,7 +363,7 @@
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
 				CEA067D52CB1B66E00E8525F /* EditFeature.swift in Sources */,
-				CEA067DA2CB1BBF200E8525F /* AddFeature.swift in Sources */,
+				CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */,
 				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
