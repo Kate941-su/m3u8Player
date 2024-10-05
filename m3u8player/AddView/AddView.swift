@@ -1,5 +1,5 @@
 //
-//  EditView.swift
+//  AddView.swift
 //  m3u8player
 //
 //  Created by Kaito Kitaya on 05.10.24.
@@ -9,22 +9,22 @@ import Foundation
 import SwiftUI
 import ComposableArchitecture
 
-struct EditView: View {
+struct AddView: View {
     @State private var title: String = ""
     @State private var url: String = ""
     @State private var isAddAlertShown = false
     @State private var isDiscardAlertShown = false
     
-    let editStore: StoreOf<EditFeature>
+    let addStore: StoreOf<VideoDataFeature>
     
-    init(editStore: StoreOf<EditFeature>) {
-        self.editStore = editStore
+    init(addStore: StoreOf<VideoDataFeature>) {
+        self.addStore = addStore
     }
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                Text("Edit")
+                Text("Add")
                     .fontWeight(.bold)
                     .font(.system(size: 36))
                     .padding(.bottom)
@@ -38,12 +38,26 @@ struct EditView: View {
                 
             }.frame(maxWidth: .infinity, alignment: .leading)
                 .padding(32)
+            HStack {
+                Button {
+                    print("add")
+                    isAddAlertShown = true
+                    addStore.send(.addButtonTapped(data: VideoData(title: title, url: URL(string: url)!)))
+                    title = ""
+                    url = ""
+                }label: {
+                    Text("Add")
+                }.padding(16)
+                    .alert(isPresented: $isAddAlertShown) {
+                        Alert(title: Text("Added"), message: Text("Succeeded to add the item 👍🏼"))
+                    }
+            }
         }
     }
 }
 
 #Preview {
-    EditView(
-        editStore: Store(initialState: EditFeature.State(),
-                         reducer: {EditFeature()}))
+    AddView(
+        addStore: Store(initialState: VideoDataFeature.State(),
+                        reducer: {VideoDataFeature()}))
 }

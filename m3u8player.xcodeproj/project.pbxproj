@@ -20,6 +20,9 @@
 		CE8686792CAF29AA00C141CB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686782CAF29AA00C141CB /* Card.swift */; };
 		CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86867B2CAF2E7600C141CB /* PlayerView.swift */; };
 		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
+		CEA067D52CB1B66E00E8525F /* EditFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D42CB1B66E00E8525F /* EditFeature.swift */; };
+		CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D72CB1BB8D00E8525F /* AddView.swift */; };
+		CEA067DA2CB1BBF200E8525F /* AddFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* AddFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		CE8686782CAF29AA00C141CB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE86867B2CAF2E7600C141CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		CEA067D42CB1B66E00E8525F /* EditFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeature.swift; sourceTree = "<group>"; };
+		CEA067D72CB1BB8D00E8525F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		CEA067D92CB1BBF200E8525F /* AddFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CEA067D62CB1BB7600E8525F /* AddView */,
 				CEA067CF2CB168DC00E8525F /* EditView */,
 				CE86867A2CAF2E4F00C141CB /* PlayerView */,
 				CE8686772CAF299100C141CB /* Component */,
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8686452CAF20CB00C141CB /* MainView.swift */,
+				CEA067D92CB1BBF200E8525F /* AddFeature.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -182,8 +190,17 @@
 			isa = PBXGroup;
 			children = (
 				CEA067D02CB168EC00E8525F /* EditView.swift */,
+				CEA067D42CB1B66E00E8525F /* EditFeature.swift */,
 			);
 			path = EditView;
+			sourceTree = "<group>";
+		};
+		CEA067D62CB1BB7600E8525F /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+				CEA067D72CB1BB8D00E8525F /* AddView.swift */,
+			);
+			path = AddView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,10 +341,13 @@
 			files = (
 				CE8686762CAF27F900C141CB /* DummyData.swift in Sources */,
 				CE8686462CAF20CB00C141CB /* MainView.swift in Sources */,
+				CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */,
 				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
+				CEA067D52CB1B66E00E8525F /* EditFeature.swift in Sources */,
+				CEA067DA2CB1BBF200E8525F /* AddFeature.swift in Sources */,
 				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

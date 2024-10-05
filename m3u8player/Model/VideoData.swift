@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoData: Identifiable {
+struct VideoData: Identifiable, Equatable {
     let id = UUID()
     let title: String
     let url: URL
