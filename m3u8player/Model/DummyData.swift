@@ -8,7 +8,7 @@
 import Foundation
 
 let baseVideoName = "sample"
-let baseVideoURL = "https://sample/player/"
+let baseVideoURL = "https://sample/player"
 var dummyVideoDataList: [VideoData] = {getDummyVideoModel()}()
 
 func getDummyVideoModel() -> [VideoData] {

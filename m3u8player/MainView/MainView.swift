@@ -13,68 +13,55 @@ struct MainView: View {
     @State private var showAlert = false
     
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            Button{
-                print("Hello World")
-            }label: {
-                    Image(systemName: "plus")
-                    .padding()
-                    .foregroundStyle(.white)
-                    .background(.blue)
-                    .clipShape(.circle)
-            }.offset(x: -25, y: -10)
-            VStack {
-                Text("Title")
-                List {
-                    ForEach(cardList) { videoData in
-                        NavigationLink(destination: PlayerView()) {
+        NavigationStack {
+            ZStack(alignment: .bottomTrailing) {
+                VStack {
+                    List {
+                        ForEach(cardList) { videoData in
                             Card(title: videoData.title, urlString: videoData.url.absoluteString)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                    Button(role: .destructive) {
-                                        print("Hello")
-                                        showAlert = true
-                                    } label: {
-                                        Image(systemName: "trash")
-                                    }.alert(isPresented: $showAlert) {
-                                        Alert(
-                                            title: Text("Confirm"),
-                                            message: Text("Are you sure to delete this itme?"),
-                                            primaryButton: .default(
-                                                Text("Yes"),
-                                                action: {print("execute delete")}
-                                            ),
-                                            secondaryButton: .destructive(
-                                                Text("No"),
-                                                action: {print("do nothing")}
-                                            )
-                                        )
-                                    }
+                                Button(role: .destructive) {
+                                    print("[Before List Size]\(cardList.count)")
+                                    cardList.removeAll(where: { $0.id == videoData.id })
+                                    print("[After List Size]\(cardList.count)")
+                                } label: {
+                                    Image(systemName: "trash")
                                 }
+                                NavigationLink(value: videoData.id) {
+                                    Image(systemName: "pencil")
+                                }
+                            }
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(.black, lineWidth: 2)  // Adds a blue border with 2 points thickness
+                                    .background(.clear)
+                                    .foregroundStyle(.white)
+                                    .padding(EdgeInsets(top: 5,
+                                                        leading: 10,
+                                                        bottom: 5,
+                                                        trailing: 10))
+                            )
                         }
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(.black, lineWidth: 2)  // Adds a blue border with 2 points thickness
-                                .background(.clear)
-                                .foregroundStyle(.white)
-                                .padding(EdgeInsets(top: 5,
-                                                    leading: 10,
-                                                    bottom: 5,
-                                                    trailing: 10))
-                        )
-                    }
-                }.listStyle(.plain)
-                    .navigationTitle("List of your registered radios")
-                    .toolbar {
-                        Button {
-                            cardList.append(VideoData(title: "appended!", url: URL(string: "appended!")!))
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
+                    }.listStyle(.plain)
+                     .navigationTitle("Radios")
+                     .navigationDestination(for: UUID.self) { value in
+                         EditView(itemNumber: value.hashValue)
+                     }
+                }
+                Button{
+                    print("Hello World")
+                    cardList.append(VideoData(title: "appended!", url: URL(string: "appended!")!))
+                    print(cardList)
+                }label: {
+                        Image(systemName: "plus")
+                        .padding()
+                        .foregroundStyle(.white)
+                        .background(.blue)
+                        .clipShape(.circle)
+                }.offset(x: -25, y: -10)
             }
         }
-
     }
 }
 

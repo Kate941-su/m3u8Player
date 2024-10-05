@@ -19,6 +19,7 @@
 		CE8686762CAF27F900C141CB /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686752CAF27F900C141CB /* DummyData.swift */; };
 		CE8686792CAF29AA00C141CB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686782CAF29AA00C141CB /* Card.swift */; };
 		CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86867B2CAF2E7600C141CB /* PlayerView.swift */; };
+		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CE8686752CAF27F900C141CB /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		CE8686782CAF29AA00C141CB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE86867B2CAF2E7600C141CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CEA067CF2CB168DC00E8525F /* EditView */,
 				CE86867A2CAF2E4F00C141CB /* PlayerView */,
 				CE8686772CAF299100C141CB /* Component */,
 				CE8686722CAF272C00C141CB /* Model */,
@@ -173,6 +176,14 @@
 				CE86867B2CAF2E7600C141CB /* PlayerView.swift */,
 			);
 			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		CEA067CF2CB168DC00E8525F /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				CEA067D02CB168EC00E8525F /* EditView.swift */,
+			);
+			path = EditView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 				CE8686462CAF20CB00C141CB /* MainView.swift in Sources */,
 				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
+				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
 				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 			);
