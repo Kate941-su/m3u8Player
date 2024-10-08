@@ -21,10 +21,10 @@ struct AddView: View {
     @State private var isDiscardAlertShown = false
     @State private var addViewAlert = AddViewAlertCase.valid
     
-    let videoFeatureStore: StoreOf<VideoDataFeature>
+    let store: StoreOf<VideoDataFeature>
     
-    init(videoFeatureStore: StoreOf<VideoDataFeature>) {
-        self.videoFeatureStore = videoFeatureStore
+    init(store: StoreOf<VideoDataFeature>) {
+        self.store = store
     }
     
     var body: some View {
@@ -57,7 +57,7 @@ struct AddView: View {
                         title = "No Title"
                     }
                     addViewAlert = .valid
-                    videoFeatureStore.send(.addButtonTapped(data: VideoData(title: title, url: validURL)))
+                    store.send(.addButtonTapped(data: VideoData(title: title, url: validURL)))
                     title = ""
                     url = ""
                 }label: {
@@ -75,6 +75,6 @@ struct AddView: View {
 
 #Preview {
     AddView(
-        videoFeatureStore: Store(initialState: VideoDataFeature.State(),
+        store: Store(initialState: VideoDataFeature.State(),
                         reducer: {VideoDataFeature()}))
 }
