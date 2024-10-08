@@ -20,7 +20,6 @@
 		CE8686792CAF29AA00C141CB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686782CAF29AA00C141CB /* Card.swift */; };
 		CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86867B2CAF2E7600C141CB /* PlayerView.swift */; };
 		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
-		CEA067D52CB1B66E00E8525F /* EditFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D42CB1B66E00E8525F /* EditFeature.swift */; };
 		CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D72CB1BB8D00E8525F /* AddView.swift */; };
 		CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +58,6 @@
 		CE8686782CAF29AA00C141CB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE86867B2CAF2E7600C141CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
-		CEA067D42CB1B66E00E8525F /* EditFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeature.swift; sourceTree = "<group>"; };
 		CEA067D72CB1BB8D00E8525F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA067D02CB168EC00E8525F /* EditView.swift */,
-				CEA067D42CB1B66E00E8525F /* EditFeature.swift */,
 			);
 			path = EditView;
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
-				CEA067D52CB1B66E00E8525F /* EditFeature.swift in Sources */,
 				CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */,
 				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 			);
@@ -521,9 +517,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = m3u8player/m3u8player.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"m3u8player/Preview Content\"";
+				DEVELOPMENT_TEAM = D44U773BCL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -543,6 +541,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaitokitaya.m3u8player;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -557,9 +556,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = m3u8player/m3u8player.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"m3u8player/Preview Content\"";
+				DEVELOPMENT_TEAM = D44U773BCL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -579,6 +580,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaitokitaya.m3u8player;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;

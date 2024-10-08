@@ -15,10 +15,10 @@ struct EditView: View {
     @State private var isAddAlertShown = false
     @State private var isDiscardAlertShown = false
     
-    let editStore: StoreOf<EditFeature>
+    let videoFeatureStore: StoreOf<VideoDataFeature>
     
-    init(editStore: StoreOf<EditFeature>) {
-        self.editStore = editStore
+    init(videoFeatureStore: StoreOf<VideoDataFeature>) {
+        self.videoFeatureStore = videoFeatureStore
     }
     
     var body: some View {
@@ -44,6 +44,6 @@ struct EditView: View {
 
 #Preview {
     EditView(
-        editStore: Store(initialState: EditFeature.State(),
-                         reducer: {EditFeature()}))
+        videoFeatureStore: Store(initialState: VideoDataFeature.State(),
+                         reducer: {VideoDataFeature()}))
 }

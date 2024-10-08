@@ -13,18 +13,27 @@ struct VideoDataFeature {
 
     @ObservableState
     struct State: Equatable {
-        var videoDataList: [VideoData] = []
+        var videoDataList: [VideoData] = {getDummyVideoModel()}()
     }
     
     enum Action {
         case addButtonTapped(data: VideoData)
+        case trashButtonTapped(id: UUID)
     }
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-            case .addButtonTapped:
-                print("addButtonTapped")
+            case let .addButtonTapped(data):
+                var newList = state.videoDataList
+                newList.append(data)
+                state.videoDataList = newList
+                return .none
+            
+            case let .trashButtonTapped(id):
+                var newList = state.videoDataList
+                newList.removeAll { $0.id == id}
+                state.videoDataList = newList
                 return .none
             }
         }

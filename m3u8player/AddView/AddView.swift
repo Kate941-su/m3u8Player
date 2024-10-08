@@ -21,10 +21,10 @@ struct AddView: View {
     @State private var isDiscardAlertShown = false
     @State private var addViewAlert = AddViewAlertCase.valid
     
-    let addStore: StoreOf<VideoDataFeature>
+    let videoFeatureStore: StoreOf<VideoDataFeature>
     
-    init(addStore: StoreOf<VideoDataFeature>) {
-        self.addStore = addStore
+    init(videoFeatureStore: StoreOf<VideoDataFeature>) {
+        self.videoFeatureStore = videoFeatureStore
     }
     
     var body: some View {
@@ -38,10 +38,11 @@ struct AddView: View {
                     .fontWeight(.bold)
                 TextField("Title", text: $title)
                     .padding(.bottom)
+                    .textFieldStyle(.roundedBorder)
                 Text("URL")
                     .fontWeight(.bold)
                 TextField("URL", text: $url)
-                
+                    .textFieldStyle(.roundedBorder)
             }.frame(maxWidth: .infinity, alignment: .leading)
                 .padding(32)
             HStack {
@@ -55,7 +56,8 @@ struct AddView: View {
                     if title.isEmpty {
                         title = "No Title"
                     }
-                    addStore.send(.addButtonTapped(data: VideoData(title: title, url: validURL)))
+                    addViewAlert = .valid
+                    videoFeatureStore.send(.addButtonTapped(data: VideoData(title: title, url: validURL)))
                     title = ""
                     url = ""
                 }label: {
@@ -73,6 +75,6 @@ struct AddView: View {
 
 #Preview {
     AddView(
-        addStore: Store(initialState: VideoDataFeature.State(),
+        videoFeatureStore: Store(initialState: VideoDataFeature.State(),
                         reducer: {VideoDataFeature()}))
 }

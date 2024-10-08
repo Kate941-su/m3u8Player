@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct m3u8playerApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(store:
+                        Store(initialState: VideoDataFeature.State(),
+                    reducer: {VideoDataFeature()}))
         }
     }
 }
