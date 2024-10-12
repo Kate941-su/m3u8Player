@@ -43,7 +43,6 @@ struct EditView: View {
 }
 
 #Preview {
-    EditView(
-        videoFeatureStore: Store(initialState: VideoDataFeature.State(),
-                         reducer: {VideoDataFeature()}))
+    EditView(videoFeatureStore: Store(initialState: VideoDataFeature.State(),
+                                      reducer: {VideoDataFeature()}))
 }

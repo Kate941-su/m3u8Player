@@ -18,18 +18,22 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            WithViewStore(self.store) { viewStore in
-                SubView(viewStore: viewStore)
-                AddButton()
-                DebugButton(viewStore: viewStore)
+            WithViewStore(self.store, observe: {$0}) { viewStore in
+                Text("List Num: \(viewStore.videoDataList.count)")
+                VStack {
+                    SubView(store: store, viewStore: viewStore)
+                    DebugButton(viewStore: viewStore)
+                }
             }
         }
     }
 }
 
 struct SubView: View {
+
+    let store: StoreOf<VideoDataFeature>
     let viewStore: ViewStore<VideoDataFeature.State, VideoDataFeature.Action>
-    
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack {
@@ -48,48 +52,38 @@ struct SubView: View {
                             .listRowSeparator(.hidden)
                             .listRowBackground(
                                 RoundedRectangle(cornerRadius: 5)
-                                    .stroke(.black, lineWidth: 2)  // Adds a blue border with 2 points thickness
+                                    .stroke(.black, lineWidth: 2)
                                     .background(.clear)
                                     .foregroundStyle(.white)
-                                    .padding(EdgeInsets(top: 5,
-                                                        leading: 10,
-                                                        bottom: 5,
-                                                        trailing: 10))
+                                    .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
                             )
                     }
                 }.listStyle(.plain)
                     .navigationTitle("Radios")
                     .navigationDestination(for: UUID.self) { value in
-                        EditView(
-                            videoFeatureStore: Store(initialState: VideoDataFeature.State()) {
-                                VideoDataFeature()
-                            }
-                        )
+                        EditView(videoFeatureStore: store)
                     }
             }
-            
-            
+            AddButton(store: store)
         }
     }
 }
 
 struct AddButton: View {
+    let store: StoreOf<VideoDataFeature>
     var body: some View {
         NavigationLink(
-            destination: AddView(
-                store: Store(initialState: VideoDataFeature.State(),
-                             reducer: {VideoDataFeature()}))) {
-                                 Image(systemName: "plus")
-                                     .padding()
-                                     .foregroundStyle(.white)
-                                     .background(.blue)
-                                     .clipShape(.circle)
-                             }.offset(x: -25, y: -10)
+            destination: AddView(store: store)) {
+            Image(systemName: "plus")
+                .padding()
+                .foregroundStyle(.white)
+                .background(.blue)
+                .clipShape(.circle)
+        }.offset(x: -5, y: -5)
     }
 }
 
 struct DebugButton: View {
-    
     let viewStore: ViewStore<VideoDataFeature.State, VideoDataFeature.Action>
     
     var body: some View {
@@ -97,7 +91,7 @@ struct DebugButton: View {
             viewStore.state.videoDataList.forEach {
                 print($0)
             }
-        }label: {
+        } label: {
             Image(systemName: "eye")
                 .padding()
                 .foregroundStyle(.white)
@@ -108,12 +102,13 @@ struct DebugButton: View {
 }
 
 #Preview {
-    AddButton()
+    AddButton(store: Store(initialState: VideoDataFeature.State(),
+                           reducer: {VideoDataFeature()}))
 }
 
 
 
 #Preview {
-    MainView(store: Store(initialState: VideoDataFeature.State(),
-                          reducer: {VideoDataFeature()}))
+    MainView(store:Store(initialState: VideoDataFeature.State(),
+                         reducer: {VideoDataFeature()}))
 }

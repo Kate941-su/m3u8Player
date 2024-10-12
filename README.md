@@ -46,3 +46,11 @@ I am getting used to using SwiftUI grammers.
 - Adding items and holding item state (delete, add, update )
 - Adding a persistence layer (SQLite?)
 - AVFoundation to play HLS stream sounds🎼
+
+
+# 12.10.2024
+- Store instance has to be only one in the project. Because if you create two more instance by the each state that you want to manage it will be managed on a diffrent memory address.
+
+- To prevent from the above you create a store on the root of the hierarchy where you want to handle your components.
+
+
