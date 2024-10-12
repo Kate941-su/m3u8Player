@@ -9,6 +9,7 @@ enum AppTabItem: String, CaseIterable {
     case Add = "plus.circle"
     case Search = "magnifyingglass"
     case Settings = "gearshape"
+    case DebugPlayer = "music.note"
     
     var tabName: String {
         switch self {
@@ -20,6 +21,8 @@ enum AppTabItem: String, CaseIterable {
             return "Settings"
         case .Add:
             return "Add"
+        case .DebugPlayer:
+            return "Player"
         }
     }
 }

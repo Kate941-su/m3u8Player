@@ -22,6 +22,8 @@
 		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
 		CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D72CB1BB8D00E8525F /* AddView.swift */; };
 		CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */; };
+		CEB507742CBAE01D00F0D117 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB507732CBAE01A00F0D117 /* MusicPlayer.swift */; };
+		CEB507772CBAE57C00F0D117 /* PlayerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB507762CBAE57600F0D117 /* PlayerFeature.swift */; };
 		CEE657EA2CBAABBE00C9D2E9 /* BottomNavigationTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE657E92CBAABAE00C9D2E9 /* BottomNavigationTabItem.swift */; };
 		CEE657EC2CBABB2A00C9D2E9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE657EB2CBABB2600C9D2E9 /* RootView.swift */; };
 		CEE657F02CBAC4C100C9D2E9 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE657EF2CBAC4BD00C9D2E9 /* PlaceholderView.swift */; };
@@ -63,6 +65,8 @@
 		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEA067D72CB1BB8D00E8525F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataFeature.swift; sourceTree = "<group>"; };
+		CEB507732CBAE01A00F0D117 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		CEB507762CBAE57600F0D117 /* PlayerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFeature.swift; sourceTree = "<group>"; };
 		CEE657E92CBAABAE00C9D2E9 /* BottomNavigationTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationTabItem.swift; sourceTree = "<group>"; };
 		CEE657EB2CBABB2600C9D2E9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CEE657EF2CBAC4BD00C9D2E9 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CEB507722CBADFD300F0D117 /* MusicPlayer */,
 				CEA067DB2CB1D74900E8525F /* Features */,
 				CEE657ED2CBAC1CE00C9D2E9 /* View */,
 				CE8686722CAF272C00C141CB /* Model */,
@@ -206,6 +211,7 @@
 		CEA067DB2CB1D74900E8525F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CEB507752CBAE56800F0D117 /* PlayerFeature */,
 				CEA067DC2CB1D75C00E8525F /* VideoDataFeature */,
 			);
 			path = Features;
@@ -217,6 +223,22 @@
 				CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */,
 			);
 			path = VideoDataFeature;
+			sourceTree = "<group>";
+		};
+		CEB507722CBADFD300F0D117 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CEB507732CBAE01A00F0D117 /* MusicPlayer.swift */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		CEB507752CBAE56800F0D117 /* PlayerFeature */ = {
+			isa = PBXGroup;
+			children = (
+				CEB507762CBAE57600F0D117 /* PlayerFeature.swift */,
+			);
+			path = PlayerFeature;
 			sourceTree = "<group>";
 		};
 		CEE657ED2CBAC1CE00C9D2E9 /* View */ = {
@@ -377,12 +399,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB507742CBAE01D00F0D117 /* MusicPlayer.swift in Sources */,
 				CE8686762CAF27F900C141CB /* DummyData.swift in Sources */,
 				CE8686462CAF20CB00C141CB /* MainView.swift in Sources */,
 				CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */,
 				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
+				CEB507772CBAE57C00F0D117 /* PlayerFeature.swift in Sources */,
 				CEE657EA2CBAABBE00C9D2E9 /* BottomNavigationTabItem.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
 				CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */,

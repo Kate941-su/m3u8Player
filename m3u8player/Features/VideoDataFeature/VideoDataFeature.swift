@@ -10,11 +10,6 @@ import ComposableArchitecture
 
 @Reducer
 struct VideoDataFeature {
-
-//    This is an anti-pattern maybe.
-//    static let shared = VideoDataFeature()
-//    private init() {}
-    
     @ObservableState
     struct State: Equatable {
         var videoDataList: [VideoData] = {getDummyVideoModel()}()

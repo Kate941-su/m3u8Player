@@ -9,8 +9,13 @@ import SwiftUI
 import ComposableArchitecture
 
 struct RootView : View {
-    let videoDataStore = Store(initialState: VideoDataFeature.State(),
-                               reducer: {VideoDataFeature()})
+    let videoDataStore = Store(initialState: VideoDataFeature.State()) {
+        VideoDataFeature()
+    }
+    
+    let playerStore = Store(initialState: PlayerFeature.State()) {
+        PlayerFeature()
+    }
     var body: some View {
         if #available(iOS 18.0, *) {
             TabView {
@@ -26,6 +31,11 @@ struct RootView : View {
                 Tab(AppTabItem.Settings.tabName, systemImage: AppTabItem.Settings.rawValue) {
                     PlaceholderView()
                 }
+#if DEBUG
+                Tab(AppTabItem.DebugPlayer.tabName, systemImage: AppTabItem.DebugPlayer.rawValue) {
+                    PlayerView(store: playerStore)
+                }
+#endif
             }
             // TODO: Deprecated from iOS 18.0
         } else {
@@ -42,6 +52,11 @@ struct RootView : View {
                 PlaceholderView().tabItem{
                     Label(AppTabItem.Settings.tabName, systemImage: AppTabItem.Settings.rawValue)
                 }
+#if DEBUG
+                PlaceholderView().tabItem{
+                    Label(AppTabItem.DebugPlayer.tabName, systemImage: AppTabItem.DebugPlayer.rawValue)
+                }
+#endif
             }
 
         }
