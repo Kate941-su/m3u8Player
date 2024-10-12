@@ -45,7 +45,6 @@ struct PlayerFeature {
                 case .success(let urlResponse):
                     MusicPlayer.shared.activateAVAudionSession()
                     MusicPlayer.shared.changeItem(url: urlResponse.url!)
-                    print(urlResponse.url)
                     MusicPlayer.shared.play()
                     state.isPlay = true
                  case .failure(let error):
