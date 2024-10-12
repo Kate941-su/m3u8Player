@@ -53,4 +53,6 @@ I am getting used to using SwiftUI grammers.
 
 - To prevent from the above you create a store on the root of the hierarchy where you want to handle your components.
 
+- There is a suitable application named SF Symbol x. where all of icons are here.
 
+- I learned how to construct Botton Navigation Bar in SwiftUI

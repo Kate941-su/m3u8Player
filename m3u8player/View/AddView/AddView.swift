@@ -30,7 +30,10 @@ struct AddView: View {
     var body: some View {
         NavigationStack {
             WithViewStore(store, observe: {$0}) { viewStore in
+#if DEBUG
                 Text("List Num: \(viewStore.videoDataList.count)")
+#endif
+
                 VStack(alignment: .leading) {
                     Text("Add")
                         .fontWeight(.bold)
@@ -51,17 +54,19 @@ struct AddView: View {
                     Button {
                         print("[URL] \(url)")
                         isAddAlertShown = true
-                        guard let validURL = URL(string: url) else {
+                        if let strongURL = URL(string: url),
+                           UIApplication.shared.canOpenURL(strongURL) {
+                            if title.isEmpty {
+                                title = "No Title"
+                            }
+                            addViewAlert = .valid
+                            store.send(.addButtonTapped(data: VideoData(title: title, url: strongURL)))
+                            title = ""
+                            url = ""
+                        } else {
                             addViewAlert = .invalid
                             return
                         }
-                        if title.isEmpty {
-                            title = "No Title"
-                        }
-                        addViewAlert = .valid
-                        store.send(.addButtonTapped(data: VideoData(title: title, url: validURL)))
-                        title = ""
-                        url = ""
                     }label: {
                         Text("Add")
                     }.padding(16)

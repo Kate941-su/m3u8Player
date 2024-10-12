@@ -22,7 +22,6 @@ struct MainView: View {
                 Text("List Num: \(viewStore.videoDataList.count)")
                 VStack {
                     SubView(store: store, viewStore: viewStore)
-                    DebugButton(viewStore: viewStore)
                 }
             }
         }
