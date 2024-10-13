@@ -10,18 +10,23 @@ import ComposableArchitecture
 
 @Reducer
 struct PlayerFeature {
+    
+    let networkRepository: NetworkRepository
+    
     @ObservableState
     struct State: Equatable {
         var isPlay: Bool = false
         var isLoading: Bool = true
-        var gain60: Double = 0.0
-        var gain170: Double = 0.0
-        var gain310: Double = 0.0
-        var gain600: Double = 0.0
-        var gain1k: Double = 0.0
-        var gain3k: Double = 0.0
-        var gain6k: Double = 0.0
-        var gain12k: Double = 0.0
+        var gain60: Float = 0.0
+        var gain170: Float = 0.0
+        var gain310: Float = 0.0
+        var gain600: Float = 0.0
+        var gain1k: Float = 0.0
+        var gain3k: Float = 0.0
+        var gain6k: Float = 0.0
+        var gain12k: Float = 0.0
+        var gain14k: Float = 0.0
+        var gain16k: Float = 0.0
     }
     
     enum Action {
@@ -36,6 +41,7 @@ struct PlayerFeature {
         Reduce { state, action in
             switch action {
             case .changeSliderValue(let value):
+                MusicPlayer.shared.setGain(frequencyCandidate: value)
                 switch value{
                 case .gain60(let gain):
                     state.gain60 = gain
@@ -61,6 +67,12 @@ struct PlayerFeature {
                 case .gain12k(let gain):
                     print("[Frequency] 12k/ [Gain] \(gain)")
                     state.gain12k = gain
+                case .gain14k(let gain):
+                    print("[Frequency] 14k/ [Gain] \(gain)")
+                    state.gain14k = gain
+                case .gain16k(let gain):
+                    print("[Frequency] 16k/ [Gain] \(gain)")
+                    state.gain16k = gain
                 }
             // TODO: write handling how to change gain in Music Player
                 return .none
@@ -81,7 +93,7 @@ struct PlayerFeature {
                 state.isLoading = false
                 switch result {
                 case .success(let urlResponse):
-                    MusicPlayer.shared.activateAVAudionSession()
+                    MusicPlayer.shared.initializeAudioEngine()
                     MusicPlayer.shared.changeItem(url: urlResponse.url!)
                     MusicPlayer.shared.play()
                     state.isPlay = true
@@ -117,14 +129,16 @@ struct PlayerFeature {
 }
 
 enum FrequencyCandidates {
-    case gain60(Double)
-    case gain170(Double)
-    case gain310(Double)
-    case gain600(Double)
-    case gain1k(Double)
-    case gain3k(Double)
-    case gain6k(Double)
-    case gain12k(Double)
+    case gain60(Float)
+    case gain170(Float)
+    case gain310(Float)
+    case gain600(Float)
+    case gain1k(Float)
+    case gain3k(Float)
+    case gain6k(Float)
+    case gain12k(Float)
+    case gain14k(Float)
+    case gain16k(Float)
     
     var label: String {
         switch self {
@@ -144,6 +158,10 @@ enum FrequencyCandidates {
             return "6K"
         case .gain12k(_):
             return "12K"
+        case .gain14k(_):
+            return "14K"
+        case .gain16k(_):
+            return "16K"
         }
     }
 }

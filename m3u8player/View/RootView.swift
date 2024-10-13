@@ -14,7 +14,7 @@ struct RootView : View {
     }
     
     let playerStore = Store(initialState: PlayerFeature.State()) {
-        PlayerFeature()
+        PlayerFeature(networkRepository: NetworkRepositoryImpl())
     }
     var body: some View {
         if #available(iOS 18.0, *) {

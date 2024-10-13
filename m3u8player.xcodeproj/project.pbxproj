@@ -22,6 +22,9 @@
 		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
 		CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D72CB1BB8D00E8525F /* AddView.swift */; };
 		CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */; };
+		CEAB1EB92CBC56090095445B /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1EB72CBC55FD0095445B /* NetworkRepository.swift */; };
+		CEAB1EBD2CBC56CD0095445B /* NetworkRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1EBC2CBC56C60095445B /* NetworkRepositoryImpl.swift */; };
+		CEAB1EC02CBC63810095445B /* NetworkAudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1EBF2CBC637B0095445B /* NetworkAudioHandler.swift */; };
 		CEB507742CBAE01D00F0D117 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB507732CBAE01A00F0D117 /* MusicPlayer.swift */; };
 		CEB507772CBAE57C00F0D117 /* PlayerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB507762CBAE57600F0D117 /* PlayerFeature.swift */; };
 		CEB507792CBB165000F0D117 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB507782CBB164800F0D117 /* CustomSlider.swift */; };
@@ -66,6 +69,9 @@
 		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEA067D72CB1BB8D00E8525F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataFeature.swift; sourceTree = "<group>"; };
+		CEAB1EB72CBC55FD0095445B /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
+		CEAB1EBC2CBC56C60095445B /* NetworkRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepositoryImpl.swift; sourceTree = "<group>"; };
+		CEAB1EBF2CBC637B0095445B /* NetworkAudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAudioHandler.swift; sourceTree = "<group>"; };
 		CEB507732CBAE01A00F0D117 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		CEB507762CBAE57600F0D117 /* PlayerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFeature.swift; sourceTree = "<group>"; };
 		CEB507782CBB164800F0D117 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CEAB1EBE2CBC636C0095445B /* NetworkAudio */,
+				CEAB1EBB2CBC56B10095445B /* Network */,
 				CEB507722CBADFD300F0D117 /* MusicPlayer */,
 				CEA067DB2CB1D74900E8525F /* Features */,
 				CEE657ED2CBAC1CE00C9D2E9 /* View */,
@@ -226,6 +234,23 @@
 				CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */,
 			);
 			path = VideoDataFeature;
+			sourceTree = "<group>";
+		};
+		CEAB1EBB2CBC56B10095445B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEAB1EBC2CBC56C60095445B /* NetworkRepositoryImpl.swift */,
+				CEAB1EB72CBC55FD0095445B /* NetworkRepository.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CEAB1EBE2CBC636C0095445B /* NetworkAudio */ = {
+			isa = PBXGroup;
+			children = (
+				CEAB1EBF2CBC637B0095445B /* NetworkAudioHandler.swift */,
+			);
+			path = NetworkAudio;
 			sourceTree = "<group>";
 		};
 		CEB507722CBADFD300F0D117 /* MusicPlayer */ = {
@@ -410,12 +435,15 @@
 				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
+				CEAB1EC02CBC63810095445B /* NetworkAudioHandler.swift in Sources */,
 				CEB507772CBAE57C00F0D117 /* PlayerFeature.swift in Sources */,
 				CEE657EA2CBAABBE00C9D2E9 /* BottomNavigationTabItem.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
 				CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */,
+				CEAB1EB92CBC56090095445B /* NetworkRepository.swift in Sources */,
 				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 				CEE657EC2CBABB2A00C9D2E9 /* RootView.swift in Sources */,
+				CEAB1EBD2CBC56CD0095445B /* NetworkRepositoryImpl.swift in Sources */,
 				CEE657F02CBAC4C100C9D2E9 /* PlaceholderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ struct CustomSlider : View {
     let store: StoreOf<PlayerFeature>
     let candidate: FrequencyCandidates
     
-    @State private var sliderValue: Double = 0
+    @State private var sliderValue: Float = 0
     
     init(store: StoreOf<PlayerFeature>, candidate: FrequencyCandidates) {
         self.store = store
@@ -36,18 +36,22 @@ struct CustomSlider : View {
                     viewStore.send(.changeSliderValue(.gain60(sliderValue)))
                 case .gain170(_):
                     viewStore.send(.changeSliderValue(.gain170(sliderValue)))
-                case .gain310(let double):
+                case .gain310(_):
                     viewStore.send(.changeSliderValue(.gain310(sliderValue)))
-                case .gain600(let double):
+                case .gain600(_):
                     viewStore.send(.changeSliderValue(.gain600(sliderValue)))
-                case .gain1k(let double):
+                case .gain1k(_):
                     viewStore.send(.changeSliderValue(.gain1k(sliderValue)))
-                case .gain3k(let double):
+                case .gain3k(_):
                     viewStore.send(.changeSliderValue(.gain3k(sliderValue)))
-                case .gain6k(let double):
+                case .gain6k(_):
                     viewStore.send(.changeSliderValue(.gain6k(sliderValue)))
-                case .gain12k(let double):
+                case .gain12k(_):
                     viewStore.send(.changeSliderValue(.gain12k(sliderValue)))
+                case .gain14k(_):
+                    viewStore.send(.changeSliderValue(.gain14k(sliderValue)))
+                case .gain16k(_):
+                    viewStore.send(.changeSliderValue(.gain16k(sliderValue)))
                 }
             }
         }
