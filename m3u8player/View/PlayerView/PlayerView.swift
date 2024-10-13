@@ -39,16 +39,21 @@ struct PlayerComponent : View {
     
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            VStack{
+            VStack(){
+                Button() {
+                    print("TODO: Show preset by using label list")
+                } label: {
+                    Text("Preset")
+                }
                 HStack {
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
-                        CustomSlider(store: store, frequency: MusicPlayer.cutoffFrequencies[0])
+                    CustomSlider(store: store, candidate: .gain60(0))
+                    CustomSlider(store: store, candidate: .gain170(0))
+                    CustomSlider(store: store, candidate: .gain310(0))
+                    CustomSlider(store: store, candidate: .gain600(0))
+                    CustomSlider(store: store, candidate: .gain1k(0))
+                    CustomSlider(store: store, candidate: .gain3k(0))
+                    CustomSlider(store: store, candidate: .gain6k(0))
+                    CustomSlider(store: store, candidate: .gain12k(0))
                 }
                 Text("Music title")
                 Button() {

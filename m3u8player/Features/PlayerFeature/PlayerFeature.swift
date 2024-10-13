@@ -14,6 +14,14 @@ struct PlayerFeature {
     struct State: Equatable {
         var isPlay: Bool = false
         var isLoading: Bool = true
+        var gain60: Double = 0.0
+        var gain170: Double = 0.0
+        var gain310: Double = 0.0
+        var gain600: Double = 0.0
+        var gain1k: Double = 0.0
+        var gain3k: Double = 0.0
+        var gain6k: Double = 0.0
+        var gain12k: Double = 0.0
     }
     
     enum Action {
@@ -21,11 +29,41 @@ struct PlayerFeature {
         case responseCheckURL(Result<HTTPURLResponse, Error>)
         case play
         case pause
+        case changeSliderValue(FrequencyCandidates)
     }
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+            case .changeSliderValue(let value):
+                switch value{
+                case .gain60(let gain):
+                    state.gain60 = gain
+                    print("[Frequency] 60/ [Gain] \(gain)")
+                case .gain170(let gain):
+                    print("[Frequency] 130/ [Gain] \(gain)")
+                    state.gain170 = gain
+                case .gain310(let gain):
+                    print("[Frequency] 310/ [Gain] \(gain)")
+                    state.gain310 = gain
+                case .gain600(let gain):
+                    print("[Frequency] 600/ [Gain] \(gain)")
+                    state.gain600 = gain
+                case .gain1k(let gain):
+                    print("[Frequency] 1k/ [Gain] \(gain)")
+                    state.gain1k = gain
+                case .gain3k(let gain):
+                    print("[Frequency] 3k/ [Gain] \(gain)")
+                    state.gain3k = gain
+                case .gain6k(let gain):
+                    print("[Frequency] 6k/ [Gain] \(gain)")
+                    state.gain6k = gain
+                case .gain12k(let gain):
+                    print("[Frequency] 12k/ [Gain] \(gain)")
+                    state.gain12k = gain
+                }
+            // TODO: write handling how to change gain in Music Player
+                return .none
             case .play:
                 MusicPlayer.shared.play()
                 state.isPlay = true
@@ -76,4 +114,36 @@ struct PlayerFeature {
     }
     
     
+}
+
+enum FrequencyCandidates {
+    case gain60(Double)
+    case gain170(Double)
+    case gain310(Double)
+    case gain600(Double)
+    case gain1k(Double)
+    case gain3k(Double)
+    case gain6k(Double)
+    case gain12k(Double)
+    
+    var label: String {
+        switch self {
+        case .gain60(_):
+            return "60"
+        case .gain170(_):
+            return "170"
+        case .gain310(_):
+            return "310"
+        case .gain600(_):
+            return "600"
+        case .gain1k(_):
+            return "1K"
+        case .gain3k(_):
+            return "3K"
+        case .gain6k(_):
+            return "6K"
+        case .gain12k(_):
+            return "12K"
+        }
+    }
 }
