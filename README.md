@@ -56,3 +56,7 @@ I am getting used to using SwiftUI grammers.
 - There is a suitable application named SF Symbol x. where all of icons are here.
 
 - I learned how to construct Botton Navigation Bar in SwiftUI
+
+# 13.10.2024
+- `AVPlayer` doesn't work with `AVAudioUnitEQ`
+- Store instance has to be only one in the project. Because if you create two more instance by the each state that you want to manage it will be managed on a diffrent memory address.
