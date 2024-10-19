@@ -8,6 +8,8 @@
 import Foundation
 import ComposableArchitecture
 
+let demoURL = URL(string: "https://cast.crn.fm:8000/radio.mp3")!
+
 @Reducer
 struct PlayerFeature {
     
@@ -77,11 +79,15 @@ struct PlayerFeature {
             // TODO: write handling how to change gain in Music Player
                 return .none
             case .play:
-                MusicPlayer.shared.play()
+//                MusicPlayer.shared.play()
+                debugPrint("Start Buffering")
+                MusicPlayer.shared.startBuffering(url: demoURL)
                 state.isPlay = true
                 return .none
             case .pause:
-                MusicPlayer.shared.stop()
+//                MusicPlayer.shared.stop()
+                debugPrint("Stop Buffering")
+                MusicPlayer.shared.stopBufffering()
                 state.isPlay = false
                 return .none
             case let .checkURL(url):

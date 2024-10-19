@@ -17,7 +17,12 @@ class MusicPlayer {
     private let defaultGain = Float(0) // db -12db ~ 12db
     private let playerNode = AVAudioPlayerNode()
     
-    private init(){}
+    // Can I DI?
+    private let networkAudioHandler = NetworkAudioHandler()
+    
+    private init(){
+        networkAudioHandler
+    }
 
     func initializeAudioEngine() {
         do {
@@ -86,6 +91,14 @@ class MusicPlayer {
     
     func stop() {
 //        player.pause()
+    }
+    
+    func startBuffering(url: URL) {
+        networkAudioHandler.startStreaming(streamingURL: url)
+    }
+    
+    func stopBufffering() {
+        networkAudioHandler.stopStreaming()
     }
     
 }

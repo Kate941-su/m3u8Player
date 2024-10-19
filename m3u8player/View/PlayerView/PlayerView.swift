@@ -32,7 +32,7 @@ struct PlayerView : View {
 
 struct PlayerComponent : View {
     let store: StoreOf<PlayerFeature>
-    
+    @State private var isDataFetching: Bool = false
     init(store: StoreOf<PlayerFeature>) {
         self.store = store
     }
@@ -63,6 +63,12 @@ struct PlayerComponent : View {
                     viewStore.isPlay ?
                     Image(systemName: "pause.fill") :
                     Image(systemName: "play.fill")
+                }
+                Button() {
+                    isDataFetching = !isDataFetching
+                } label: {
+                    isDataFetching ?
+                    Text("start fetching") : Text("stop fetching")
                 }
             }
         }

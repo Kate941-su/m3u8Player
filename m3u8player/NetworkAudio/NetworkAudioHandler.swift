@@ -7,12 +7,11 @@
 import Foundation
 import AVFoundation
 
-class NetworkAudioHandler: NSObject, URLSessionDataDelegate {
+class NetworkAudioHandler: NSObject, URLSessionDataDelegate  {
     
     private var dataTask: URLSessionDataTask?
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        // Handle the received audio data
         processAudioData(data)
     }
     
@@ -30,6 +29,7 @@ class NetworkAudioHandler: NSObject, URLSessionDataDelegate {
             data.copyBytes(to: UnsafeMutableBufferPointer(start: channelData, count: data.count / MemoryLayout<Float>.size))
         }
         
+        debugPrint("[Audio Buffer]: \(buffer?.format)")
         // TODO: Hand over channelData for MusicPlayer buffer.
     }
     
@@ -38,5 +38,17 @@ class NetworkAudioHandler: NSObject, URLSessionDataDelegate {
         dataTask = session.dataTask(with: streamingURL)
         dataTask?.resume()
     }
+    
+    // Test
+    func test() {
+
+    }
+    
+    // Test
+    func stopStreaming() {
+        dataTask?.cancel()
+    }
+    
+    
 }
 
