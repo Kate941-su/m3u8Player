@@ -18,10 +18,24 @@ class MusicPlayer {
     private let playerNode = AVAudioPlayerNode()
     
     // Can I DI?
-    private let networkAudioHandler = NetworkAudioHandler()
+    private let networkAudioHandler: NetworkAudioHandler
     
     private init(){
-        networkAudioHandler
+        networkAudioHandler = NetworkAudioHandler(delegate: { data in
+            debugPrint("Delegate method executed")
+            //        let format = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)!
+            //        let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(data.count / MemoryLayout<Float>.size))
+            //
+            //        // Fill the buffer with the audio data (ensure data is in correct format)
+            //        buffer?.frameLength = buffer!.frameCapacity
+            //        let channelData = buffer?.floatChannelData?[0]
+            //
+            //        // Check if the buffer is valid and copy data into it
+            //        if let channelData = channelData {
+            //            data.copyBytes(to: UnsafeMutableBufferPointer(start: channelData, count: data.count / MemoryLayout<Float>.size))
+            //        }
+            //        debugPrint("[Audio Buffer]: \(buffer?.format)")
+        })
     }
 
     func initializeAudioEngine() {

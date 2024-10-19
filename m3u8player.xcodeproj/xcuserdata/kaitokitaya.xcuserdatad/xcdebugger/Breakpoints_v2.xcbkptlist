@@ -318,8 +318,8 @@
             filePath = "m3u8player/MusicPlayer/MusicPlayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "setGain(frequencyCandidate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,10 +334,40 @@
             filePath = "m3u8player/MusicPlayer/MusicPlayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "initializeAudioEngine()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76BD967E-C23D-495F-9CC3-43A4B67CF8D2 - e70074ef38c28290"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "m3u8player.MusicPlayer.setGain(frequencyCandidate: m3u8player.FrequencyCandidates) -&gt; ()"
+                  moduleName = "m3u8player.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaitokitaya/iOSDev/m3u8Player/m3u8player/MusicPlayer/MusicPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57">
+               </Location>
+               <Location
+                  uuid = "76BD967E-C23D-495F-9CC3-43A4B67CF8D2 - 9aa3bb891b08de68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "m3u8player.MusicPlayer.initializeAudioEngine() -&gt; ()"
+                  moduleName = "m3u8player.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kaitokitaya/iOSDev/m3u8Player/m3u8player/MusicPlayer/MusicPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -350,8 +380,8 @@
             filePath = "m3u8player/MusicPlayer/MusicPlayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "initializeAudioEngine()"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +396,8 @@
             filePath = "m3u8player/MusicPlayer/MusicPlayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "startBuffering(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,56 +412,10 @@
             filePath = "m3u8player/NetworkAudio/NetworkAudioHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "urlSession(_:dataTask:didReceive:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7E58D5B4-8EF2-44C9-9ECF-06EFD8B05B5D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "m3u8player/NetworkAudio/NetworkAudioHandler.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "processAudioData(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7E58D5B4-8EF2-44C9-9ECF-06EFD8B05B5D - e8b83330bdce90fd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "m3u8player.NetworkAudioHandler.processAudioData(Foundation.Data) -&gt; ()"
-                  moduleName = "m3u8player.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kaitokitaya/iOSDev/m3u8Player/m3u8player/NetworkAudio/NetworkAudioHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-               <Location
-                  uuid = "7E58D5B4-8EF2-44C9-9ECF-06EFD8B05B5D - e8b83330bdce90fd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "m3u8player.NetworkAudioHandler.processAudioData(Foundation.Data) -&gt; ()"
-                  moduleName = "m3u8player.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kaitokitaya/iOSDev/m3u8Player/m3u8player/NetworkAudio/NetworkAudioHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
