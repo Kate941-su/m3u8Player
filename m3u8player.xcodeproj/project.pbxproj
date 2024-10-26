@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE039AFF2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */; };
+		CE039B032CCCF39F00382EB5 /* MainPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B022CCCF39800382EB5 /* MainPlayerView.swift */; };
 		CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */; };
 		CE8686462CAF20CB00C141CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686452CAF20CB00C141CB /* MainView.swift */; };
 		CE8686482CAF20CC00C141CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8686472CAF20CC00C141CB /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVNodeMusicPlayer.swift; sourceTree = "<group>"; };
+		CE039B022CCCF39800382EB5 /* MainPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerView.swift; sourceTree = "<group>"; };
 		CE8686402CAF20CB00C141CB /* m3u8player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m3u8player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerApp.swift; sourceTree = "<group>"; };
 		CE8686452CAF20CB00C141CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -106,6 +110,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE039B002CCCF33C00382EB5 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8686782CAF29AA00C141CB /* Card.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		CE039B012CCCF34E00382EB5 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				CE039B022CCCF39800382EB5 /* MainPlayerView.swift */,
+				CEB507782CBB164800F0D117 /* CustomSlider.swift */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
 		CE8686372CAF20CB00C141CB = {
 			isa = PBXGroup;
 			children = (
@@ -189,8 +210,8 @@
 		CE8686772CAF299100C141CB /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				CEB507782CBB164800F0D117 /* CustomSlider.swift */,
-				CE8686782CAF29AA00C141CB /* Card.swift */,
+				CE039B012CCCF34E00382EB5 /* PlayerView */,
+				CE039B002CCCF33C00382EB5 /* MainView */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -257,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB507732CBAE01A00F0D117 /* MusicPlayer.swift */,
+				CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -427,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE039B032CCCF39F00382EB5 /* MainPlayerView.swift in Sources */,
 				CEB507742CBAE01D00F0D117 /* MusicPlayer.swift in Sources */,
 				CE8686762CAF27F900C141CB /* DummyData.swift in Sources */,
 				CE8686462CAF20CB00C141CB /* MainView.swift in Sources */,
@@ -445,6 +468,7 @@
 				CEE657EC2CBABB2A00C9D2E9 /* RootView.swift in Sources */,
 				CEAB1EBD2CBC56CD0095445B /* NetworkRepositoryImpl.swift in Sources */,
 				CEE657F02CBAC4C100C9D2E9 /* PlaceholderView.swift in Sources */,
+				CE039AFF2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

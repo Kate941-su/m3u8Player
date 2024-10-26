@@ -11,7 +11,7 @@ struct NetworkRepositoryImpl: NetworkRepository {
     
     private let urlSession = URLSession.shared
     
-    func checkIsValidURL(url: URL) async  -> Result<HTTPURLResponse, Error> {
+    func checkisValidURL(url: URL) async  -> Result<HTTPURLResponse, Error> {
         var request = URLRequest(url: url)
         request.httpMethod = "HEAD"
         guard let (_, response) = try? await urlSession.data(for: request) else {
@@ -33,7 +33,9 @@ struct NetworkRepositoryImpl: NetworkRepository {
 
 // MARK: Mock Class
 struct MockedNetworkRepository: NetworkRepository {
-    func checkIsValidURL(url: URL) async -> Result<HTTPURLResponse, any Error> {
+    func checkisValidURL(url: URL) async -> Result<HTTPURLResponse, any Error> {
         return .success(HTTPURLResponse())
     }
+    
+    
 }

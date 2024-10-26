@@ -9,110 +9,37 @@ import AVFoundation
 class MusicPlayer {
     
     // This values are inspired by Winamp
-    static let cutoffFrequencies = [60, 170, 310, 600, 1000, 3000, 6000, 12000, 14000, 16000]
     static let shared = MusicPlayer()
-
-    private let audioEngine = AVAudioEngine()
-    private let equalizer = AVAudioUnitEQ(numberOfBands: MusicPlayer.cutoffFrequencies.count)
-    private let defaultGain = Float(0) // db -12db ~ 12db
-    private let playerNode = AVAudioPlayerNode()
-    
-    // Can I DI?
-    private let networkAudioHandler: NetworkAudioHandler
+    private let player = AVPlayer()
+    private(set) var currentItem: AVPlayerItem? = nil
     
     private init(){
-        networkAudioHandler = NetworkAudioHandler(delegate: { data in
-            debugPrint("Delegate method executed")
-            //        let format = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)!
-            //        let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(data.count / MemoryLayout<Float>.size))
-            //
-            //        // Fill the buffer with the audio data (ensure data is in correct format)
-            //        buffer?.frameLength = buffer!.frameCapacity
-            //        let channelData = buffer?.floatChannelData?[0]
-            //
-            //        // Check if the buffer is valid and copy data into it
-            //        if let channelData = channelData {
-            //            data.copyBytes(to: UnsafeMutableBufferPointer(start: channelData, count: data.count / MemoryLayout<Float>.size))
-            //        }
-            //        debugPrint("[Audio Buffer]: \(buffer?.format)")
-        })
-    }
-
-    func initializeAudioEngine() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             try AVAudioSession.sharedInstance().setActive(true)
-            for (index, frequency) in MusicPlayer.cutoffFrequencies.enumerated() {
-                let band = equalizer.bands[index]
-                band.filterType = .parametric
-                band.frequency = Float(frequency)
-                band.bypass = false
-                band.gain = -12
-            }
-            audioEngine.attach(equalizer)
-            audioEngine.attach(playerNode)
-            audioEngine.connect(playerNode, to: equalizer, format: nil)
-            audioEngine.connect(equalizer, to: audioEngine.outputNode, format: nil)
         } catch {
-            print("Error: \(error.localizedDescription)")
+            debugPrint("[ERROR]: \(error)")
         }
-    }
-    
-    func setGain(frequencyCandidate: FrequencyCandidates) {
-        switch frequencyCandidate {
-        case .gain60(let value):
-            equalizer.bands[0].gain = value
-        case .gain170(let value):
-            equalizer.bands[1].gain = value
-        case .gain310(let value):
-            equalizer.bands[2].gain = value
-        case .gain600(let value):
-            equalizer.bands[3].gain = value
-        case .gain1k(let value):
-            equalizer.bands[4].gain = value
-        case .gain3k(let value):
-            equalizer.bands[5].gain = value
-        case .gain6k(let value):
-            equalizer.bands[6].gain = value
-        case .gain12k(let value):
-            equalizer.bands[7].gain = value
-        case .gain14k(let value):
-            equalizer.bands[8].gain = value
-        case .gain16k(let value):
-            equalizer.bands[9].gain = value
-        }
-    }
+     }
     
     func deactivate() {
-        try? AVAudioSession.sharedInstance().setActive(false)
+        do {
+            try AVAudioSession.sharedInstance().setActive(false)
+        } catch {
+            debugPrint("[ERROR]: \(error)")
+        }
     }
     
-    func changeItem(url: URL) {
-//        player.replaceCurrentItem(with: AVPlayerItem(url: url))
+    func setItem(url: URL) {
+        currentItem = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: currentItem!)
     }
     
     func play() {
-        audioEngine.prepare()
-        do {
-            try audioEngine.start()
-            playerNode.play()
-//            player.play()
-        } catch {
-          print("[Error] \(error)")
-        }
-
+        player.play()
     }
     
     func stop() {
-//        player.pause()
+        player.pause()
     }
-    
-    func startBuffering(url: URL) {
-        networkAudioHandler.startStreaming(streamingURL: url)
-    }
-    
-    func stopBufffering() {
-        networkAudioHandler.stopStreaming()
-    }
-    
 }
