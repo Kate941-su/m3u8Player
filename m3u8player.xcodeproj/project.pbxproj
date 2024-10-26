@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE039AFF2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */; };
 		CE039B032CCCF39F00382EB5 /* MainPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B022CCCF39800382EB5 /* MainPlayerView.swift */; };
+		CE039B062CCD126800382EB5 /* Padding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B052CCD115C00382EB5 /* Padding+.swift */; };
 		CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */; };
 		CE8686462CAF20CB00C141CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686452CAF20CB00C141CB /* MainView.swift */; };
 		CE8686482CAF20CC00C141CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8686472CAF20CC00C141CB /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVNodeMusicPlayer.swift; sourceTree = "<group>"; };
 		CE039B022CCCF39800382EB5 /* MainPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerView.swift; sourceTree = "<group>"; };
+		CE039B052CCD115C00382EB5 /* Padding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Padding+.swift"; sourceTree = "<group>"; };
 		CE8686402CAF20CB00C141CB /* m3u8player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m3u8player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerApp.swift; sourceTree = "<group>"; };
 		CE8686452CAF20CB00C141CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			path = PlayerView;
 			sourceTree = "<group>";
 		};
+		CE039B042CCD10E500382EB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE039B052CCD115C00382EB5 /* Padding+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CE8686372CAF20CB00C141CB = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CE039B042CCD10E500382EB5 /* Extensions */,
 				CEAB1EBE2CBC636C0095445B /* NetworkAudio */,
 				CEAB1EBB2CBC56B10095445B /* Network */,
 				CEB507722CBADFD300F0D117 /* MusicPlayer */,
@@ -467,6 +478,7 @@
 				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
 				CEE657EC2CBABB2A00C9D2E9 /* RootView.swift in Sources */,
 				CEAB1EBD2CBC56CD0095445B /* NetworkRepositoryImpl.swift in Sources */,
+				CE039B062CCD126800382EB5 /* Padding+.swift in Sources */,
 				CEE657F02CBAC4C100C9D2E9 /* PlaceholderView.swift in Sources */,
 				CE039AFF2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift in Sources */,
 			);
