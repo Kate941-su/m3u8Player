@@ -42,4 +42,9 @@ class MusicPlayer {
     func stop() {
         player.pause()
     }
+    
+    func changeMute(isMute: Bool) {
+        player.isMuted = isMute
+    }
+    
 }

@@ -21,9 +21,9 @@ struct AddView: View {
     @State private var isDiscardAlertShown = false
     @State private var addViewAlert = AddViewAlertCase.valid
     
-    let store: StoreOf<VideoDataFeature>
+    let store: StoreOf<AudioDataFeature>
     
-    init(store: StoreOf<VideoDataFeature>) {
+    init(store: StoreOf<AudioDataFeature>) {
         self.store = store
     }
     
@@ -31,7 +31,7 @@ struct AddView: View {
         NavigationStack {
             WithViewStore(store, observe: {$0}) { viewStore in
 #if DEBUG
-                Text("List Num: \(viewStore.videoDataList.count)")
+                Text("List Num: \(viewStore.audioDataList.count)")
 #endif
 
                 VStack(alignment: .leading) {
@@ -60,7 +60,11 @@ struct AddView: View {
                                 title = "No Title"
                             }
                             addViewAlert = .valid
-                            store.send(.addButtonTapped(data: VideoData(title: title, url: strongURL)))
+                            store.send(.addButtonTapped(data: AudioData(
+                                                                title: title,
+                                                                url: strongURL,
+                                                                type: .Streaming
+                            )))
                             title = ""
                             url = ""
                         } else {
@@ -84,5 +88,5 @@ struct AddView: View {
 
 #Preview {
     AddView(
-        store: Store(initialState: VideoDataFeature.State(),reducer: {VideoDataFeature()}))
+        store: Store(initialState: AudioDataFeature.State(),reducer: {AudioDataFeature()}))
 }

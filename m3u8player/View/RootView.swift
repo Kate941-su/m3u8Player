@@ -9,8 +9,8 @@ import SwiftUI
 import ComposableArchitecture
 
 struct RootView : View {
-    let videoDataStore = Store(initialState: VideoDataFeature.State()) {
-        VideoDataFeature()
+    let videoDataStore = Store(initialState: AudioDataFeature.State()) {
+        AudioDataFeature()
     }
     
     let playerStore = Store(initialState: PlayerFeature.State()) {

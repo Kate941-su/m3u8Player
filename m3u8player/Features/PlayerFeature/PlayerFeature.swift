@@ -8,7 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-let demoURL = URL(string: "https://cast.crn.fm:8000/radio.mp3")!
+
 
 @Reducer
 struct PlayerFeature {
@@ -19,6 +19,7 @@ struct PlayerFeature {
     struct State: Equatable {
         var isPlay: Bool = false
         var playerStatus: PlayerStatus = .Loading
+        var isMute: Bool = false
         var gain60: Float = 0.0
         var gain170: Float = 0.0
         var gain310: Float = 0.0
@@ -36,6 +37,8 @@ struct PlayerFeature {
         case responseCheckURL(Result<HTTPURLResponse, Error>)
         case play
         case pause
+        case mute
+        case unMute
         case changeSliderValue(FrequencyCandidates)
     }
     
@@ -68,6 +71,14 @@ struct PlayerFeature {
                     print("Error is happening: \(error.localizedDescription)")
                 }
                 return .none
+                case .mute:
+                    state.isMute = true
+                    MusicPlayer.shared.changeMute(isMute: true)
+                    return .none
+                case .unMute:
+                    state.isMute = false
+                    MusicPlayer.shared.changeMute(isMute: false)
+                    return .none
             }
         }
     }

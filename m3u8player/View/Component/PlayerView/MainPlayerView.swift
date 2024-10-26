@@ -63,11 +63,11 @@ struct MainPlayerView : View {
                             .paddingOnly(leading: 60)
                     }
                 }.paddingOnly(top: 30)
-                HStack() {
-                    Image(systemName: "speaker.fill")
-                    KnoblessProgressbar(percentage: $volume, height: 20)
-                    Image(systemName: "speaker.wave.3.fill")
-                }.paddingOnly(top: 30)
+//                HStack() {
+//                    Image(systemName: "speaker.fill")
+//                    KnoblessProgressbar(percentage: $volume, height: 20)
+//                    Image(systemName: "speaker.wave.3.fill")
+//                }.paddingOnly(top: 30)
 
             }.padding(32)
         }

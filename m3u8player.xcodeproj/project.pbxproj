@@ -11,6 +11,7 @@
 		CE039B032CCCF39F00382EB5 /* MainPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B022CCCF39800382EB5 /* MainPlayerView.swift */; };
 		CE039B062CCD126800382EB5 /* Padding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B052CCD115C00382EB5 /* Padding+.swift */; };
 		CE039B082CCD18AD00382EB5 /* KnoblessProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B072CCD18A400382EB5 /* KnoblessProgressbar.swift */; };
+		CE039B0C2CCD439B00382EB5 /* SmallPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B0B2CCD438F00382EB5 /* SmallPlayerView.swift */; };
 		CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */; };
 		CE8686462CAF20CB00C141CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686452CAF20CB00C141CB /* MainView.swift */; };
 		CE8686482CAF20CC00C141CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8686472CAF20CC00C141CB /* Assets.xcassets */; };
@@ -19,13 +20,13 @@
 		CE8686602CAF20CD00C141CB /* m3u8playerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86865F2CAF20CD00C141CB /* m3u8playerUITests.swift */; };
 		CE8686622CAF20CD00C141CB /* m3u8playerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686612CAF20CD00C141CB /* m3u8playerUITestsLaunchTests.swift */; };
 		CE8686702CAF20E600C141CB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CE86866F2CAF20E600C141CB /* ComposableArchitecture */; };
-		CE8686742CAF276400C141CB /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686732CAF276400C141CB /* VideoData.swift */; };
+		CE8686742CAF276400C141CB /* AudioData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686732CAF276400C141CB /* AudioData.swift */; };
 		CE8686762CAF27F900C141CB /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686752CAF27F900C141CB /* DummyData.swift */; };
 		CE8686792CAF29AA00C141CB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686782CAF29AA00C141CB /* Card.swift */; };
 		CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86867B2CAF2E7600C141CB /* PlayerView.swift */; };
 		CEA067D12CB168EC00E8525F /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D02CB168EC00E8525F /* EditView.swift */; };
 		CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D72CB1BB8D00E8525F /* AddView.swift */; };
-		CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */; };
+		CEA067DA2CB1BBF200E8525F /* AudioDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA067D92CB1BBF200E8525F /* AudioDataFeature.swift */; };
 		CEAB1EB92CBC56090095445B /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1EB72CBC55FD0095445B /* NetworkRepository.swift */; };
 		CEAB1EBD2CBC56CD0095445B /* NetworkRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1EBC2CBC56C60095445B /* NetworkRepositoryImpl.swift */; };
 		CEAB1EC02CBC63810095445B /* NetworkAudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1EBF2CBC637B0095445B /* NetworkAudioHandler.swift */; };
@@ -59,6 +60,7 @@
 		CE039B022CCCF39800382EB5 /* MainPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerView.swift; sourceTree = "<group>"; };
 		CE039B052CCD115C00382EB5 /* Padding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Padding+.swift"; sourceTree = "<group>"; };
 		CE039B072CCD18A400382EB5 /* KnoblessProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnoblessProgressbar.swift; sourceTree = "<group>"; };
+		CE039B0B2CCD438F00382EB5 /* SmallPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlayerView.swift; sourceTree = "<group>"; };
 		CE8686402CAF20CB00C141CB /* m3u8player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m3u8player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerApp.swift; sourceTree = "<group>"; };
 		CE8686452CAF20CB00C141CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -70,13 +72,13 @@
 		CE86865B2CAF20CD00C141CB /* m3u8playerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = m3u8playerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE86865F2CAF20CD00C141CB /* m3u8playerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerUITests.swift; sourceTree = "<group>"; };
 		CE8686612CAF20CD00C141CB /* m3u8playerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CE8686732CAF276400C141CB /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
+		CE8686732CAF276400C141CB /* AudioData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioData.swift; sourceTree = "<group>"; };
 		CE8686752CAF27F900C141CB /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		CE8686782CAF29AA00C141CB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE86867B2CAF2E7600C141CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CEA067D02CB168EC00E8525F /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEA067D72CB1BB8D00E8525F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
-		CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataFeature.swift; sourceTree = "<group>"; };
+		CEA067D92CB1BBF200E8525F /* AudioDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDataFeature.swift; sourceTree = "<group>"; };
 		CEAB1EB72CBC55FD0095445B /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
 		CEAB1EBC2CBC56C60095445B /* NetworkRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepositoryImpl.swift; sourceTree = "<group>"; };
 		CEAB1EBF2CBC637B0095445B /* NetworkAudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAudioHandler.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		CE039B012CCCF34E00382EB5 /* PlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				CE039B0B2CCD438F00382EB5 /* SmallPlayerView.swift */,
 				CE039B072CCD18A400382EB5 /* KnoblessProgressbar.swift */,
 				CE039B022CCCF39800382EB5 /* MainPlayerView.swift */,
 				CEB507782CBB164800F0D117 /* CustomSlider.swift */,
@@ -138,6 +141,14 @@
 				CE039B052CCD115C00382EB5 /* Padding+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE039B0A2CCD38D800382EB5 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				CE8686752CAF27F900C141CB /* DummyData.swift */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 		CE8686372CAF20CB00C141CB = {
@@ -163,6 +174,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CE039B0A2CCD38D800382EB5 /* Debug */,
 				CE039B042CCD10E500382EB5 /* Extensions */,
 				CEAB1EBE2CBC636C0095445B /* NetworkAudio */,
 				CEAB1EBB2CBC56B10095445B /* Network */,
@@ -215,8 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE657E92CBAABAE00C9D2E9 /* BottomNavigationTabItem.swift */,
-				CE8686732CAF276400C141CB /* VideoData.swift */,
-				CE8686752CAF27F900C141CB /* DummyData.swift */,
+				CE8686732CAF276400C141CB /* AudioData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,17 +269,17 @@
 			isa = PBXGroup;
 			children = (
 				CEB507752CBAE56800F0D117 /* PlayerFeature */,
-				CEA067DC2CB1D75C00E8525F /* VideoDataFeature */,
+				CEA067DC2CB1D75C00E8525F /* AudioDataFeature */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		CEA067DC2CB1D75C00E8525F /* VideoDataFeature */ = {
+		CEA067DC2CB1D75C00E8525F /* AudioDataFeature */ = {
 			isa = PBXGroup;
 			children = (
-				CEA067D92CB1BBF200E8525F /* VideoDataFeature.swift */,
+				CEA067D92CB1BBF200E8525F /* AudioDataFeature.swift */,
 			);
-			path = VideoDataFeature;
+			path = AudioDataFeature;
 			sourceTree = "<group>";
 		};
 		CEAB1EBB2CBC56B10095445B /* Network */ = {
@@ -472,14 +483,15 @@
 				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
 				CE039B082CCD18AD00382EB5 /* KnoblessProgressbar.swift in Sources */,
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
+				CE039B0C2CCD439B00382EB5 /* SmallPlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CEAB1EC02CBC63810095445B /* NetworkAudioHandler.swift in Sources */,
 				CEB507772CBAE57C00F0D117 /* PlayerFeature.swift in Sources */,
 				CEE657EA2CBAABBE00C9D2E9 /* BottomNavigationTabItem.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
-				CEA067DA2CB1BBF200E8525F /* VideoDataFeature.swift in Sources */,
+				CEA067DA2CB1BBF200E8525F /* AudioDataFeature.swift in Sources */,
 				CEAB1EB92CBC56090095445B /* NetworkRepository.swift in Sources */,
-				CE8686742CAF276400C141CB /* VideoData.swift in Sources */,
+				CE8686742CAF276400C141CB /* AudioData.swift in Sources */,
 				CEE657EC2CBABB2A00C9D2E9 /* RootView.swift in Sources */,
 				CEAB1EBD2CBC56CD0095445B /* NetworkRepositoryImpl.swift in Sources */,
 				CE039B062CCD126800382EB5 /* Padding+.swift in Sources */,

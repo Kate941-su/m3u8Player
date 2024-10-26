@@ -1,3 +1,10 @@
+# Task
+- [ ] Swiping for shrink and expand gesture
+- [ ] Persitents data
+- [ ] link UI and player
+- [ ] Being able to play static audio data (.mp3)
+
+
 # 05.10.2024
 
 ## swipeAction()
@@ -60,3 +67,9 @@ I am getting used to using SwiftUI grammers.
 # 13.10.2024
 - `AVPlayer` doesn't work with `AVAudioUnitEQ`
 - Store instance has to be only one in the project. Because if you create two more instance by the each state that you want to manage it will be managed on a diffrent memory address.
+
+
+# (STU)26.10.2024
+- GeometryReader
+- Binding
+
