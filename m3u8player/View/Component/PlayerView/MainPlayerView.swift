@@ -12,6 +12,8 @@ struct MainPlayerView : View {
     init(store: StoreOf<PlayerFeature>) {
         self.store = store
     }
+    @State var currentTime: Double = 0
+    @State var volume: Float = 0
     
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
@@ -25,6 +27,15 @@ struct MainPlayerView : View {
                     Text("Music title")
                 }.frame(maxWidth: .infinity, alignment: .leading)
                  .paddingOnly(top: 30)
+                VStack {
+                    Slider(value: $currentTime, in: 0...100)
+                        .paddingOnly(top: 30)
+                    HStack {
+                        Text("--:--")
+                        Spacer()
+                        Text("--:--")
+                    }
+                }
                 HStack {
                     Button() {
 
@@ -51,6 +62,11 @@ struct MainPlayerView : View {
                             .frame(width: 30, height: 30)
                             .paddingOnly(leading: 60)
                     }
+                }.paddingOnly(top: 30)
+                HStack() {
+                    Image(systemName: "speaker.fill")
+                    KnoblessProgressbar(percentage: $volume, height: 20)
+                    Image(systemName: "speaker.wave.3.fill")
                 }.paddingOnly(top: 30)
 
             }.padding(32)

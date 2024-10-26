@@ -10,6 +10,7 @@
 		CE039AFF2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */; };
 		CE039B032CCCF39F00382EB5 /* MainPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B022CCCF39800382EB5 /* MainPlayerView.swift */; };
 		CE039B062CCD126800382EB5 /* Padding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B052CCD115C00382EB5 /* Padding+.swift */; };
+		CE039B082CCD18AD00382EB5 /* KnoblessProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039B072CCD18A400382EB5 /* KnoblessProgressbar.swift */; };
 		CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */; };
 		CE8686462CAF20CB00C141CB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8686452CAF20CB00C141CB /* MainView.swift */; };
 		CE8686482CAF20CC00C141CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8686472CAF20CC00C141CB /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		CE039AFE2CCCE29C00382EB5 /* AVNodeMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVNodeMusicPlayer.swift; sourceTree = "<group>"; };
 		CE039B022CCCF39800382EB5 /* MainPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerView.swift; sourceTree = "<group>"; };
 		CE039B052CCD115C00382EB5 /* Padding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Padding+.swift"; sourceTree = "<group>"; };
+		CE039B072CCD18A400382EB5 /* KnoblessProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnoblessProgressbar.swift; sourceTree = "<group>"; };
 		CE8686402CAF20CB00C141CB /* m3u8player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m3u8player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8686432CAF20CB00C141CB /* m3u8playerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m3u8playerApp.swift; sourceTree = "<group>"; };
 		CE8686452CAF20CB00C141CB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		CE039B012CCCF34E00382EB5 /* PlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				CE039B072CCD18A400382EB5 /* KnoblessProgressbar.swift */,
 				CE039B022CCCF39800382EB5 /* MainPlayerView.swift */,
 				CEB507782CBB164800F0D117 /* CustomSlider.swift */,
 			);
@@ -467,6 +470,7 @@
 				CEA067D82CB1BB8D00E8525F /* AddView.swift in Sources */,
 				CEB507792CBB165000F0D117 /* CustomSlider.swift in Sources */,
 				CE8686792CAF29AA00C141CB /* Card.swift in Sources */,
+				CE039B082CCD18AD00382EB5 /* KnoblessProgressbar.swift in Sources */,
 				CE86867C2CAF2E7600C141CB /* PlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CEAB1EC02CBC63810095445B /* NetworkAudioHandler.swift in Sources */,
