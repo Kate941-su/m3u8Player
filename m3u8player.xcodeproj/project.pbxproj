@@ -36,6 +36,7 @@
 		CEE657EA2CBAABBE00C9D2E9 /* BottomNavigationTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE657E92CBAABAE00C9D2E9 /* BottomNavigationTabItem.swift */; };
 		CEE657EC2CBABB2A00C9D2E9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE657EB2CBABB2600C9D2E9 /* RootView.swift */; };
 		CEE657F02CBAC4C100C9D2E9 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE657EF2CBAC4BD00C9D2E9 /* PlaceholderView.swift */; };
+		CEE999F42CCECD0600B98794 /* PanGersture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE999F32CCECD0200B98794 /* PanGersture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		CEE657E92CBAABAE00C9D2E9 /* BottomNavigationTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationTabItem.swift; sourceTree = "<group>"; };
 		CEE657EB2CBABB2600C9D2E9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CEE657EF2CBAC4BD00C9D2E9 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		CEE999F32CCECD0200B98794 /* PanGersture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGersture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		CE8686422CAF20CB00C141CB /* m3u8player */ = {
 			isa = PBXGroup;
 			children = (
+				CEE999F22CCECCF200B98794 /* Helper */,
 				CE039B0A2CCD38D800382EB5 /* Debug */,
 				CE039B042CCD10E500382EB5 /* Extensions */,
 				CEAB1EBE2CBC636C0095445B /* NetworkAudio */,
@@ -338,6 +341,14 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
+		CEE999F22CCECCF200B98794 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CEE999F32CCECD0200B98794 /* PanGersture.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +497,7 @@
 				CE039B0C2CCD439B00382EB5 /* SmallPlayerView.swift in Sources */,
 				CEA067D12CB168EC00E8525F /* EditView.swift in Sources */,
 				CEAB1EC02CBC63810095445B /* NetworkAudioHandler.swift in Sources */,
+				CEE999F42CCECD0600B98794 /* PanGersture.swift in Sources */,
 				CEB507772CBAE57C00F0D117 /* PlayerFeature.swift in Sources */,
 				CEE657EA2CBAABBE00C9D2E9 /* BottomNavigationTabItem.swift in Sources */,
 				CE8686442CAF20CB00C141CB /* m3u8playerApp.swift in Sources */,
@@ -670,7 +682,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -709,7 +721,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;

@@ -14,7 +14,7 @@ struct SmallPlayerView: View {
         HStack() {
             RoundedRectangle(cornerRadius: 4)
                 .fill(.blue)
-                .frame(width: 56, height: 56)
+                .frame(width: 36, height: 36)
             Spacer()
             Text("Title here Title here!")
                 .padding(8)
@@ -26,9 +26,10 @@ struct SmallPlayerView: View {
                     .resizable()
                     .frame(width: 24, height: 24)
             }
-        }.frame(width: .infinity, height: 64, alignment: .leading)
+        }.frame(height: 48, alignment: .leading)
          .padding(16)
          .background(.white)
+         .shadow(radius: 4)
     }
 }
 

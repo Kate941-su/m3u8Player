@@ -24,7 +24,7 @@ struct PlayerView : View {
                     case .Disable:
                         Text("TODO: make when receiving disable state")
                     case .Enable:
-                        MainPlayerView(store: store)
+                        MainPlayerView(store: store, height: UIScreen.main.bounds.height)
                 }
             }.onAppear {
                 if viewStore.playerStatus == .Loading {
@@ -36,5 +36,6 @@ struct PlayerView : View {
 }
 
 #Preview {
-    MainPlayerView(store: Store(initialState: PlayerFeature.State()){})
+    MainPlayerView(store: Store(initialState: PlayerFeature.State()){},
+                   height: UIScreen.main.bounds.height)
 }

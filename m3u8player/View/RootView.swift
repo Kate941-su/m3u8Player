@@ -20,7 +20,7 @@ struct RootView : View {
         if #available(iOS 18.0, *) {
             TabView {
                 Tab(AppTabItem.Home.tabName, systemImage: AppTabItem.Home.rawValue) {
-                    MainView(store: videoDataStore)
+                    MainView(store: videoDataStore, playerStore: playerStore)
                 }
                 Tab(AppTabItem.Add.tabName, systemImage: AppTabItem.Add.rawValue) {
                     AddView(store: videoDataStore)
@@ -40,7 +40,7 @@ struct RootView : View {
             // TODO: Deprecated from iOS 18.0
         } else {
             TabView{
-                MainView(store: videoDataStore).tabItem{
+                MainView(store: videoDataStore, playerStore: playerStore).tabItem{
                     Label(AppTabItem.Home.tabName, systemImage: AppTabItem.Home.rawValue)
                 }
                 AddView(store: videoDataStore).tabItem{
@@ -53,7 +53,7 @@ struct RootView : View {
                     Label(AppTabItem.Settings.tabName, systemImage: AppTabItem.Settings.rawValue)
                 }
 #if DEBUG
-                PlaceholderView().tabItem{
+                PlayerView(store: playerStore).tabItem{
                     Label(AppTabItem.DebugPlayer.tabName, systemImage: AppTabItem.DebugPlayer.rawValue)
                 }
 #endif

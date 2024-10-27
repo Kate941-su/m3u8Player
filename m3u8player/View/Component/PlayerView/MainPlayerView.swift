@@ -9,11 +9,13 @@ import SwiftUI
 
 struct MainPlayerView : View {
     let store: StoreOf<PlayerFeature>
-    init(store: StoreOf<PlayerFeature>) {
-        self.store = store
-    }
     @State var currentTime: Double = 0
     @State var volume: Float = 0
+    private let height: CGFloat
+    init(store: StoreOf<PlayerFeature>, height: CGFloat) {
+        self.store = store
+        self.height = height
+    }
     
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
@@ -63,17 +65,16 @@ struct MainPlayerView : View {
                             .paddingOnly(leading: 60)
                     }
                 }.paddingOnly(top: 30)
-//                HStack() {
-//                    Image(systemName: "speaker.fill")
-//                    KnoblessProgressbar(percentage: $volume, height: 20)
-//                    Image(systemName: "speaker.wave.3.fill")
-//                }.paddingOnly(top: 30)
-
             }.padding(32)
+             .frame(height: height)
+             .background(.red)
         }
     }
 }
 
 #Preview {
-    MainPlayerView(store: Store(initialState: PlayerFeature.State()){})
+    MainPlayerView(
+        store: Store(initialState: PlayerFeature.State()){},
+        height: UIScreen.main.bounds.height
+    )
 }
