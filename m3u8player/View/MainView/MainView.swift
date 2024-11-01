@@ -47,7 +47,7 @@ struct SubView: View {
                     MusicListComponent()
                         .opacity(isExpandPlayer ? 0 : 1)
                     MiniPlayer(height: CGFloat(isExpandPlayer ? 0 : miniPlayerHeight))
-                        .opacity(isExpandPlayer ? 0 : 1)
+                        .opacity(isExpandPlayer ? 1 : 1)
                     if isExpandPlayer {
                         ExpandedPlayer(size: size)
                             .opacity(isExpandPlayer ? 1 : 0)
@@ -104,31 +104,44 @@ struct SubView: View {
     
     @ViewBuilder
     func MiniPlayer(height: CGFloat) -> some View {
-        HStack() {
-            RoundedRectangle(cornerRadius: 4)
-                .fill(.blue)
-                .frame(width: 36, height: 36)
-            Spacer()
-            Text("Title here Title here!")
-                .padding(8)
-            Spacer()
-            Button{
-                
-            }label: {
-                Image(systemName: "play.fill")
-                    .resizable()
-                    .frame(width: 24, height: 24)
+        if isExpandPlayer {
+            HStack {
+                Button {
+                    withAnimation(.smooth(duration: 0.3, extraBounce: 0)) {
+                        isExpandPlayer = false
+                    }
+                } label: {
+                    Image(systemName: "xmark")
+                }.frame( maxWidth: .infinity, alignment: .leading)
+                 .padding(8)
             }
-        }.frame(height: height, alignment: .leading)
-            .padding(16)
-            .background(.white)
-            .shadow(radius: 4)
-            .onTapGesture {
-                withAnimation(.smooth(duration: 2, extraBounce: 0)) {
-                    isExpandPlayer = true
-                    debugPrint("isExpandPlayer: \(isExpandPlayer)")
+        } else {
+            HStack() {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(.blue)
+                    .frame(width: 36, height: 36)
+                Spacer()
+                Text("Title here Title here!")
+                    .padding(8)
+                Spacer()
+                Button{
+                    
+                }label: {
+                    Image(systemName: "play.fill")
+                        .resizable()
+                        .frame(width: 24, height: 24)
                 }
-            }
+            }.frame(height: height, alignment: .leading)
+                .padding(16)
+                .background(.white)
+                .shadow(radius: 4)
+                .onTapGesture {
+                    withAnimation(.smooth(duration: 0.3, extraBounce: 0)) {
+                        isExpandPlayer = true
+                        debugPrint("isExpandPlayer: \(isExpandPlayer)")
+                    }
+                }
+        }
     }
     
     @ViewBuilder
